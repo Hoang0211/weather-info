@@ -172,3 +172,6 @@ form {
 .back-btn:hover {
   transform: scale(1.1);
 }
+.back-btn:focus {
+  outline: none;
+}

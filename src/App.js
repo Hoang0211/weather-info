@@ -32,10 +32,13 @@ function App() {
   const [data, setData] = useState();
 
   const inputRef = useRef();
+  const backBtnRef = useRef();
 
   useEffect(() => {
     if (!flipped) {
       inputRef.current.focus();
+    } else {
+      backBtnRef.current.focus();
     }
   }, [flipped]);
 
@@ -123,7 +126,7 @@ function App() {
                 value={data.wind.speed}
               />
             </div>
-            <button className="back-btn" onClick={backHandler}>
+            <button className="back-btn" onClick={backHandler} ref={backBtnRef}>
               Back
             </button>
           </div>
