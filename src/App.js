@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Axios from "axios";
 import env from "react-dotenv";
@@ -30,6 +30,14 @@ function App() {
   const [flipped, setFlipped] = useState(false);
   const [input, setInput] = useState("");
   const [data, setData] = useState();
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    if (!flipped) {
+      inputRef.current.focus();
+    }
+  }, [flipped]);
 
   const inputChangeHandler = (e) => {
     setInput(e.target.value);
@@ -72,6 +80,7 @@ function App() {
                 placeholder="Enter a city name"
                 value={input}
                 onChange={inputChangeHandler}
+                ref={inputRef}
               />
               <button className="search-btn" onClick={searchHandler}>
                 Search
