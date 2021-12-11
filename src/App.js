@@ -21,6 +21,11 @@ const WeatherIcons = {
 
 function App() {
   const [flipped, setFlipped] = useState(false);
+  const [input, setInput] = useState("");
+
+  const inputChangeHandler = (e) => {
+    setInput(e.target.value);
+  };
 
   return (
     <div className="weather-info">
@@ -33,6 +38,8 @@ function App() {
                 className="search-bar"
                 type="text"
                 placeholder="Enter a city name"
+                value={input}
+                onChange={inputChangeHandler}
               />
               <button>Search</button>
             </form>
