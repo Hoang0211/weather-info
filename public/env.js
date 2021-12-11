@@ -1,7 +1,7 @@
 window.env = {
   "ACLOCAL_PATH": "C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal",
   "ALLUSERSPROFILE": "C:\\ProgramData",
-  "API_URL": "Hello there",
+  "API_KEY": "d9d658cea504503ae61019867f3c4382",
   "APPDATA": "C:\\Users\\ADMIN\\AppData\\Roaming",
   "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
   "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_3972_RNAGOHQIFLDIHCIH",
