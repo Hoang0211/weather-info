@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import Axios from "axios";
 import env from "react-dotenv";
 
+import { FaWind } from "react-icons/fa";
+import { FiSunrise, FiSunset } from "react-icons/fi";
+import { WiHumidity } from "react-icons/wi";
+
+import WeatherInfo from "./components/WeatherInfo";
+
 const WeatherIcons = {
   "01d": "../Assets/icons/sunny.svg",
   "01n": "../Assets/icons/night.svg",
@@ -23,7 +29,7 @@ const WeatherIcons = {
 function App() {
   const [flipped, setFlipped] = useState(false);
   const [input, setInput] = useState("");
-  const [cityData, setCityData] = useState();
+  const [data, setData] = useState();
 
   const inputChangeHandler = (e) => {
     setInput(e.target.value);
@@ -35,7 +41,7 @@ function App() {
       `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${env.API_KEY}`
     ).catch(console.clear);
 
-    setCityData(res.data);
+    setData(res.data);
     setFlipped(!flipped);
   };
 
@@ -60,7 +66,48 @@ function App() {
             <img src={WeatherIcons["04d"]} alt="home-img" />
           </div>
         ) : (
-          <div className="back"></div>
+          <div className="back">
+            <h2 className="location">
+              {data.name} - {data.sys.country}
+            </h2>
+            <div className="main-container">
+              <div className="main-container__infos">
+                <h3 className="temp">{`${Math.floor(
+                  data.main.temp - 273
+                )}°C`}</h3>
+                <p className="description">{data.weather[0].description}</p>
+              </div>
+              <img
+                src={WeatherIcons[data.weather[0].icon]}
+                alt="weather-img"
+              ></img>
+            </div>
+            <div className="container">
+              <h2 className="more-info">More info</h2>
+              <div className="container__infos">
+                <WeatherInfo
+                  icon={<FiSunrise className="icon" />}
+                  name="sunrise"
+                  value={data.sys.sunrise}
+                />
+                <WeatherInfo
+                  icon={<FiSunset className="icon" />}
+                  name="sunset"
+                  value={data.sys.sunset}
+                />
+                <WeatherInfo
+                  icon={<WiHumidity className="icon" />}
+                  name="humidity"
+                  value={data.main.humidity}
+                />
+                <WeatherInfo
+                  icon={<FaWind className="icon" />}
+                  name="wind"
+                  value={data.wind.speed}
+                />
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
