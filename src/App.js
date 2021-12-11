@@ -77,7 +77,7 @@ function App() {
               <input
                 className="search-bar"
                 type="text"
-                placeholder="Enter a city name"
+                placeholder="Enter a city name..."
                 value={input}
                 onChange={inputChangeHandler}
                 ref={inputRef}
@@ -94,41 +94,34 @@ function App() {
               {data.name} - {data.sys.country}
             </h2>
             <div className="main-container">
-              <div className="main-container__infos">
-                <h3 className="temp">{`${Math.floor(
-                  data.main.temp - 273
-                )}°C`}</h3>
-                <p className="description">{data.weather[0].description}</p>
-              </div>
-              <img
-                src={WeatherIcons[data.weather[0].icon]}
-                alt="weather-img"
-              ></img>
+              <h3 className="temp">{`${Math.floor(
+                data.main.temp - 273
+              )}°C`}</h3>
+              <img src={WeatherIcons[data.weather[0].icon]} alt="weather-img" />
+              <p className="description">{data.weather[0].description}</p>
             </div>
+            <h3 className="more-info">More info</h3>
             <div className="container">
-              <h2 className="more-info">More info</h2>
-              <div className="container__infos">
-                <WeatherInfo
-                  icon={<FiSunrise className="icon" />}
-                  name="sunrise"
-                  value={convertTime(data.sys.sunrise)}
-                />
-                <WeatherInfo
-                  icon={<FiSunset className="icon" />}
-                  name="sunset"
-                  value={convertTime(data.sys.sunset)}
-                />
-                <WeatherInfo
-                  icon={<WiHumidity className="icon" />}
-                  name="humidity"
-                  value={data.main.humidity}
-                />
-                <WeatherInfo
-                  icon={<FaWind className="icon" />}
-                  name="wind"
-                  value={data.wind.speed}
-                />
-              </div>
+              <WeatherInfo
+                icon={<FiSunrise className="icon" />}
+                name="sunrise"
+                value={convertTime(data.sys.sunrise)}
+              />
+              <WeatherInfo
+                icon={<FiSunset className="icon" />}
+                name="sunset"
+                value={convertTime(data.sys.sunset)}
+              />
+              <WeatherInfo
+                icon={<WiHumidity className="icon" />}
+                name="humidity"
+                value={data.main.humidity}
+              />
+              <WeatherInfo
+                icon={<FaWind className="icon" />}
+                name="wind"
+                value={data.wind.speed}
+              />
             </div>
             <button className="back-btn" onClick={backHandler}>
               Back
