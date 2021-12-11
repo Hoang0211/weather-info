@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Axios from "axios";
 import env from "react-dotenv";
 
 const WeatherIcons = {
@@ -22,9 +23,20 @@ const WeatherIcons = {
 function App() {
   const [flipped, setFlipped] = useState(false);
   const [input, setInput] = useState("");
+  const [cityData, setCityData] = useState();
 
   const inputChangeHandler = (e) => {
     setInput(e.target.value);
+  };
+
+  const searchHandler = async (e) => {
+    e.preventDefault();
+    const res = await Axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${env.API_KEY}`
+    ).catch(console.clear);
+
+    setCityData(res.data);
+    setFlipped(!flipped);
   };
 
   return (
@@ -41,7 +53,9 @@ function App() {
                 value={input}
                 onChange={inputChangeHandler}
               />
-              <button>Search</button>
+              <button className="search-btn" onClick={searchHandler}>
+                Search
+              </button>
             </form>
             <img src={WeatherIcons["04d"]} alt="home-img" />
           </div>
