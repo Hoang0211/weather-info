@@ -41,8 +41,16 @@ function App() {
       `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${env.API_KEY}`
     ).catch(console.clear);
 
-    setData(res.data);
-    setFlipped(!flipped);
+    if (res) {
+      setData(res.data);
+      setFlipped((prev) => !prev);
+    }
+  };
+
+  const backHandler = () => {
+    setFlipped((prev) => !prev);
+    setInput("");
+    setData();
   };
 
   return (
@@ -107,6 +115,9 @@ function App() {
                 />
               </div>
             </div>
+            <button className="back-btn" onClick={backHandler}>
+              Back
+            </button>
           </div>
         )}
       </div>
