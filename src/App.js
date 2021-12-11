@@ -53,6 +53,12 @@ function App() {
     setData();
   };
 
+  const convertTime = (timeStamp) => {
+    return `${new Date(timeStamp * 1000).getHours()}:${new Date(
+      timeStamp * 1000
+    ).getMinutes()}`;
+  };
+
   return (
     <div className="weather-info">
       <h1 className="title">Weather Info</h1>
@@ -96,12 +102,12 @@ function App() {
                 <WeatherInfo
                   icon={<FiSunrise className="icon" />}
                   name="sunrise"
-                  value={data.sys.sunrise}
+                  value={convertTime(data.sys.sunrise)}
                 />
                 <WeatherInfo
                   icon={<FiSunset className="icon" />}
                   name="sunset"
-                  value={data.sys.sunset}
+                  value={convertTime(data.sys.sunset)}
                 />
                 <WeatherInfo
                   icon={<WiHumidity className="icon" />}
