@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import Axios from "axios";
-import env from "react-dotenv";
 
 import sunny from "./Assets/icons/sunny.svg";
 import night from "./Assets/icons/night.svg";
@@ -59,7 +58,7 @@ function App() {
   const searchHandler = async (e) => {
     e.preventDefault();
     const res = await Axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${env.API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${process.env.REACT_APP_API_KEY}`
     ).catch(console.clear);
 
     if (res) {
@@ -110,7 +109,10 @@ function App() {
               <h3 className="temp">{`${Math.floor(
                 data.main.temp - 273
               )}°C`}</h3>
-              <img src={WeatherIcons[data.weather[0].icon]} alt="weather-img" />
+              <img
+                src={WeatherIcons[data.weather[0].icon]}
+                alt={`${data.weather[0].description}-img`}
+              />
               <p className="description">{data.weather[0].description}</p>
             </div>
             <h3 className="more-info">More info</h3>
