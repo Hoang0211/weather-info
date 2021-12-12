@@ -1,7 +1,6 @@
 window.env = {
   "ACLOCAL_PATH": "C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal",
   "ALLUSERSPROFILE": "C:\\ProgramData",
-  "API_KEY": "d9d658cea504503ae61019867f3c4382",
   "APPDATA": "C:\\Users\\ADMIN\\AppData\\Roaming",
   "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
   "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_10316_ZCIESOTMTFUPYLXF",
@@ -87,6 +86,7 @@ window.env = {
   "PUBLIC": "C:\\Users\\Public",
   "PWD": "D:/WebDev/weather-info",
   "QT_DEVICE_PIXEL_RATIO": "auto",
+  "REACT_APP_API_KEY": "d9d658cea504503ae61019867f3c4382",
   "SESSIONNAME": "Console",
   "SHELL": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
   "SHLVL": "2",
