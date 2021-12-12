@@ -3,6 +3,16 @@ import React, { useState, useEffect, useRef } from "react";
 import Axios from "axios";
 import env from "react-dotenv";
 
+import sunny from "./Assets/icons/sunny.svg";
+import night from "./Assets/icons/night.svg";
+import day from "./Assets/icons/day.svg";
+import cloudy_night from "./Assets/icons/cloudy-night.svg";
+import cloudy from "./Assets/icons/cloudy.svg";
+import perfect_day from "./Assets/icons/perfect-day.svg";
+import rain from "./Assets/icons/rain.svg";
+import rain_night from "./Assets/icons/rain-night.svg";
+import storm from "./Assets/icons/storm.svg";
+
 import { FaWind } from "react-icons/fa";
 import { FiSunrise, FiSunset } from "react-icons/fi";
 import { WiHumidity } from "react-icons/wi";
@@ -10,20 +20,20 @@ import { WiHumidity } from "react-icons/wi";
 import WeatherInfo from "./components/WeatherInfo";
 
 const WeatherIcons = {
-  "01d": "../Assets/icons/sunny.svg",
-  "01n": "../Assets/icons/night.svg",
-  "02d": "../Assets/icons/day.svg",
-  "02n": "../Assets/icons/cloudy-night.svg",
-  "03d": "../Assets/icons/cloudy.svg",
-  "03n": "../Assets/icons/cloudy.svg",
-  "04d": "../Assets/icons/perfect-day.svg",
-  "04n": "../Assets/icons/cloudy-night.svg",
-  "09d": "../Assets/icons/rain.svg",
-  "09n": "../Assets/icons/rain-night.svg",
-  "10d": "../Assets/icons/rain.svg",
-  "10n": "../Assets/icons/rain-night.svg",
-  "11d": "../Assets/icons/storm.svg",
-  "11n": "../Assets/icons/storm.svg",
+  "01d": sunny,
+  "01n": night,
+  "02d": day,
+  "02n": cloudy_night,
+  "03d": cloudy,
+  "03n": cloudy,
+  "04d": perfect_day,
+  "04n": cloudy_night,
+  "09d": rain,
+  "09n": rain_night,
+  "10d": rain,
+  "10n": rain_night,
+  "11d": storm,
+  "11n": storm,
 };
 
 function App() {
