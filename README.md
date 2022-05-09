@@ -24,8 +24,6 @@ A weather info web application that allow users to find information about weathe
 - Users can type a city name and find weather information about it.
 - Auto focus applied, no need to use mouse.
 
-  ![page load](./readme-assets/responsive-layout.gif)
-
 [Back To Top](#Table-Of-Contents)
 
 ---
