@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-function WeatherInfo(props) {
+function WeatherInfo({ icon, value, name }) {
   return (
-    <div className="info-container">
-      {props.icon}
-      <span className="info__value">{props.value}</span>
-      <span className="info__name">{props.name}</span>
+    <div className='info'>
+      {icon}
+      <span className='info__value'>{value}</span>
+      <span className='info__name'>{name}</span>
     </div>
   );
 }

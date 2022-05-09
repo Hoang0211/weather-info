@@ -54,10 +54,12 @@ button {
   justify-content: center;
   align-items: center;
 }
+
 .title {
   text-align: center;
   color: var(--clr-light);
 }
+
 .wrapper {
   height: 550px;
   width: 550px;
@@ -69,6 +71,10 @@ button {
   transform-style: preserve-3d;
   transition: 0.6s;
 }
+.wrapper-flipped {
+  transform: rotateY(180deg);
+}
+
 .front,
 .back {
   backface-visibility: hidden;
@@ -78,9 +84,6 @@ button {
   transform: rotateY(0deg);
 }
 .back {
-  transform: rotateY(180deg);
-}
-.wrapper.flipped {
   transform: rotateY(180deg);
 }
 
@@ -93,28 +96,29 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-form {
+.front__form {
   height: 50px;
   margin-bottom: 20px;
 }
-.search-btn,
-.search-bar {
+.form__input,
+.form__submit {
   height: 100%;
   font-size: var(--fs-body);
 }
-.search-bar {
+.form__input {
   width: 350px;
   padding: 0 10px;
 }
-.search-bar:focus {
+.form__input:focus {
   outline: none;
 }
-.search-btn {
+.form__submit {
   padding: 5px 20px;
 }
-.front img {
+.front__img {
   width: 80%;
 }
+
 /* Back */
 .back {
   height: 100%;
@@ -123,7 +127,13 @@ form {
   justify-content: space-between;
   align-items: center;
 }
-.main-container {
+.back__loading,
+.back__error {
+  margin: auto;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.back__info-main {
   margin: 20px 0;
   display: grid;
   grid-column-gap: 50px;
@@ -131,23 +141,23 @@ form {
   grid-template-rows: repeat(2, 50px);
   font-size: 1.75rem;
 }
-.temp {
+.back__temp {
   font-size: 2.5rem;
 }
-.main-container img {
+.back__img {
   height: 100%;
   width: auto;
   display: flex;
   justify-content: center;
   grid-row: span 2;
 }
-.container {
+.back__info-more {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
-.info-container {
+.info {
   padding: 10px;
   display: grid;
   grid-column-gap: 20px;
@@ -162,16 +172,16 @@ form {
   justify-content: center;
   grid-row: span 2;
 }
-.back-btn {
+.back__btn {
   margin-top: 5px;
   padding: 7px 30px;
   border-radius: 5px;
   font-size: 1.5rem;
   transition: 0.5s;
 }
-.back-btn:hover {
+.back__btn:hover {
   transform: scale(1.1);
 }
-.back-btn:focus {
+.back__btn:focus {
   outline: none;
 }
