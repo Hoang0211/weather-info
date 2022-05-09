@@ -31,7 +31,7 @@ A weather info web application that allow users to find information about weathe
 ## Technologies Used
 
 - React.js (Hooks)
-- API
+- Weather API
 - GitHub Pages
 
 [Back To Top](#Table-Of-Contents)
