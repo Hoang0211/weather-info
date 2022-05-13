@@ -16,12 +16,12 @@ Weather info app created as a personal project.
 
 ## Application Features
 
-A weather info web application that allow users to find information about weather in different cities.
+The application serves as a weather info web that allows users to find information about weather in different cities.
 
 ### Requirements
 
 - Simple to use interface.
-- Users can type a city name and find weather information about it.
+- Weather info searched by city name.
 - Auto focus applied, no need to use mouse.
 
 [Back To Top](#Table-Of-Contents)
@@ -30,9 +30,9 @@ A weather info web application that allow users to find information about weathe
 
 ## Technologies Used
 
-- React.js (Hooks)
-- WeatherAPI
-- GitHub Pages
+This project gets data from WeatherAPI and is deployed using GitHub Pages.
+
+- React.js
 
 [Back To Top](#Table-Of-Contents)
 
